@@ -265,3 +265,50 @@ html{scroll-padding-top:calc(var(--header-height) + 12px)}
 .visual-feature .semester-video-wrap{max-width:800px}
 
 .animation-external{display:flex;min-height:170px;background:#111;color:#fff;align-items:center;justify-content:center;text-align:center;padding:20px;font-weight:700;text-decoration:none}.animation-external:hover{background:#333;color:#ffe34b}
+
+/* V38: visual category arrow tags beside the featured visual project */
+.visual-side-tags{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-top:6px}
+.visual-side-tags button{font-size:12px;white-space:nowrap}
+@media(max-width:1050px){.visual-side-tags{flex-direction:row;flex-wrap:wrap}}
+.visual-section{scroll-margin-top:25px}
+
+/* V47: portfolio project hero uses the same dimensions and position as other project heroes. */
+.dialog-hero:has(img[src*="portfolio-site-cover"]){
+  width:auto;
+  height:auto;
+  aspect-ratio:16 / 7;
+  min-height:190px;
+  margin:0 -6% 36px;
+  padding:0;
+  overflow:hidden;
+  background:var(--blue);
+}
+.dialog-hero:has(img[src*="portfolio-site-cover"]) .dialog-hero-main{
+  width:100%;height:100%;min-height:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.dialog-hero:has(img[src*="portfolio-site-cover"]) .dialog-hero-main>img{
+  display:block;width:100%;height:100%;max-height:none;
+  object-fit:contain;object-position:center center;
+}
+@media(max-width:760px){
+ .dialog-hero:has(img[src*="portfolio-site-cover"]){margin-inline:-5%;min-height:155px}
+}
+
+/* V43: retain original image orientation in visual gallery */
+.visual-gallery.gallery-portrait img{height:400px;object-fit:contain}
+.visual-gallery.gallery-landscape img{height:auto;aspect-ratio:3/2;object-fit:contain}
+@media(max-width:620px){.visual-gallery.gallery-portrait img{height:auto;max-height:550px}}
+
+/* V45: three portrait photos; center the final portrait without cropping */
+.visual-gallery.gallery-portrait figure:last-child:nth-child(odd){grid-column:1 / -1;width:calc(50% - 9px);justify-self:center}
+@media(max-width:620px){.visual-gallery.gallery-portrait figure:last-child:nth-child(odd){width:100%}}
+
+/* V46: three portrait photographs share one row; coffee photograph spans full landscape gallery width. */
+@media (min-width: 621px) {
+  .visual-gallery.gallery-portrait { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .visual-gallery.gallery-portrait figure:last-child:nth-child(odd) { grid-column: auto; width: 100%; justify-self: stretch; }
+  .visual-gallery.gallery-portrait img { height: 350px; object-fit: contain; }
+  .visual-gallery.gallery-landscape figure:first-child { grid-column: 1 / -1; }
+  .visual-gallery.gallery-landscape figure:first-child img { aspect-ratio: auto; height: auto; max-height: 580px; width: 100%; object-fit: contain; }
+}

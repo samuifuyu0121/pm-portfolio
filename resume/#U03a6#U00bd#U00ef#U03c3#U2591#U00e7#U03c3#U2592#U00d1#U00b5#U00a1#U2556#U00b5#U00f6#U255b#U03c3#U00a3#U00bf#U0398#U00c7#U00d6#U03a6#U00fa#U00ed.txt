@@ -1,0 +1,1 @@
+將正式履歷命名為 resume.pdf，放在此資料夾。網站下載連結會自動指向 resume/resume.pdf。
