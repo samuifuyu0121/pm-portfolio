@@ -231,3 +231,37 @@ html{scroll-padding-top:calc(var(--header-height) + 12px)}
 @media (max-width:760px){
   .project-grid > .event-project-entry{grid-column:1 / -1;grid-template-columns:minmax(0,1fr);}
 }
+
+/* Semester project timeline */
+.semester-dialog{padding-top:34px}.semester-timeline{margin:28px 0 10px;border-left:5px solid var(--ink);padding-left:22px;display:grid;gap:16px}.semester-entry{position:relative;border:2px solid var(--ink);background:#fff}.semester-entry:before{content:"";position:absolute;left:-34px;top:25px;width:13px;height:13px;background:var(--yellow);border:2px solid var(--ink);border-radius:50%}.semester-toggle{display:flex;align-items:center;gap:16px;width:100%;padding:19px;text-align:left;background:#fff;border:0;font-weight:900}.semester-toggle:hover,.semester-toggle[aria-expanded=true]{background:var(--yellow)}.semester-term{font-size:12px;background:var(--ink);color:#fff;padding:8px 10px;white-space:nowrap}.semester-title{flex:1;font-size:clamp(17px,2.5vw,25px)}.semester-expand{font-size:25px}.semester-detail{padding:4px 22px 25px;line-height:1.85}.semester-detail[hidden]{display:none}.semester-role{font-weight:900}.semester-detail img{display:block;width:100%;max-height:430px;object-fit:contain;object-position:center top;background:#f4f3ee;margin:18px 0;border:1px solid var(--ink)}.semester-detail .btn{margin:8px 10px 0 0}.semester-go{cursor:pointer}@media(max-width:650px){.semester-timeline{padding-left:15px}.semester-entry:before{left:-27px}.semester-toggle{padding:12px;gap:9px}.semester-term{padding:6px;font-size:10px}.semester-detail{padding:3px 13px 20px}}
+
+/* V31: inline semester videos and awards on the collapsed timeline */
+.semester-award{display:inline-flex;align-items:center;justify-content:center;background:var(--yellow);border:2px solid var(--ink);padding:7px 10px;font-size:12px;font-weight:900;line-height:1.3;white-space:nowrap}
+.semester-toggle[aria-expanded="true"] .semester-award,.semester-toggle:hover .semester-award{background:#fff}
+.semester-video-wrap{width:100%;aspect-ratio:16/9;margin:18px 0 4px;border:2px solid var(--ink);background:#111;overflow:hidden}
+.semester-video-wrap iframe{display:block;width:100%;height:100%;max-width:none;border:0}
+@media(max-width:650px){.semester-toggle{flex-wrap:wrap}.semester-title{flex:1 1 55%}.semester-award{order:3;margin-left:0;font-size:10px;padding:5px 7px}.semester-expand{margin-left:auto}.semester-video-wrap{margin-top:12px}}
+
+/* V31: project photos and clickable category tags */
+.semester-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.semester-detail .semester-gallery img{width:100%;height:230px;max-height:none;object-fit:contain;background:#f6f5ef;margin:0}
+.semester-side-tags{align-self:start}
+@media(max-width:650px){.semester-gallery{grid-template-columns:1fr}.semester-detail .semester-gallery img{height:auto;max-height:360px}}
+
+/* V32: match EXE-style outlined arrow labels for project timeline. */
+.semester-side-tags{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding-top:6px}
+.semester-side-tags button{font-size:12px}
+.semester-play[hidden]{display:none}
+@media(max-width:1050px){.semester-side-tags{flex-direction:row;flex-wrap:wrap}}
+
+/* V34 visual works */
+.visual-dialog{padding-top:4px}.visual-section{margin:32px 0 48px;border-top:3px solid #141414;padding-top:20px}.visual-section>h3{font-size:clamp(21px,3vw,30px);margin:0 0 8px}.visual-section>p{line-height:1.8;color:#555}.visual-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.visual-gallery figure,.visual-video-grid figure{margin:0;border:2px solid #111;background:#fff;overflow:hidden}.visual-gallery img{display:block;width:100%;height:290px;object-fit:contain;background:#f8f8f6}.visual-gallery figcaption,.visual-video-grid figcaption{padding:12px;font-size:13px;font-weight:800}.visual-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.visual-video-grid .semester-video-wrap{margin:0;border:0}.visual-video-grid video{display:block;width:100%;aspect-ratio:16/9;background:#111}.visual-section .btn{margin-top:16px}@media(max-width:620px){.visual-gallery,.visual-video-grid{grid-template-columns:1fr}.visual-gallery img{height:auto;max-height:430px}}
+
+/* V35 artwork presentation and basic copy deterrence */
+.visual-dialog img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
+.visual-dialog .copyright-note{font-size:12px;border-left:4px solid #111;padding:10px 14px;background:#fff6c8;color:#252525}
+.visual-feature{margin:22px 0;padding:18px;border:2px solid #111;background:#faf9f5}
+.visual-feature h4{font-size:19px;margin:0 0 8px}.visual-feature p{margin:0 0 16px}
+.visual-feature .semester-video-wrap{max-width:800px}
+
+.animation-external{display:flex;min-height:170px;background:#111;color:#fff;align-items:center;justify-content:center;text-align:center;padding:20px;font-weight:700;text-decoration:none}.animation-external:hover{background:#333;color:#ffe34b}
