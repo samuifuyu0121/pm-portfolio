@@ -312,3 +312,6 @@ html{scroll-padding-top:calc(var(--header-height) + 12px)}
   .visual-gallery.gallery-landscape figure:first-child { grid-column: 1 / -1; }
   .visual-gallery.gallery-landscape figure:first-child img { aspect-ratio: auto; height: auto; max-height: 580px; width: 100%; object-fit: contain; }
 }
+
+/* Arrow-linked project details use a return control instead of close. */
+.dialog-close.is-back{width:54px;font-size:26px;line-height:1;}
